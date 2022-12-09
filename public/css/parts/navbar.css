@@ -1,3 +1,6 @@
+header{
+    transition: .5s;
+}
 nav{
     background-color: #4c4b4b;
   
@@ -8,7 +11,7 @@ nav{
 
 .nav-item a{
     color:#fff;
-    font-size: .7em;
+    font-size: .5em;
 }
 .navbar ul{
     margin-left: auto;
@@ -17,12 +20,17 @@ nav{
 .navbar a{
     line-height: 1.3em;
     padding: .7rem 2rem;
-    font-size: 1em;
+    font-size: .8em;
 }
 nav ul li a{
     color:#fff !important;
     
 }
+nav ul li a:hover, .fa-brands:hover,.fa-facebook:hover{
+    color:#2192FF !important;
+    
+}
+
 .logo{
     width: 100%;
  
@@ -36,7 +44,8 @@ nav ul li a{
 /* *******logo****** */
 
 .navbar-brand img{
-    width: 150px;
+    width: 120px;
+    padding: 10px 0;
 }
 .navitems{
     gap: 1rem;
@@ -54,6 +63,11 @@ nav ul li a{
 #bookNow{
     padding: 10px 25px;
     white-space: nowrap;
+    transition: .5s;
+}
+#bookNow:hover{
+    background-color: #343333;
+    color: #fff;
 }
 
 .title-row{

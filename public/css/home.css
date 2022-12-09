@@ -9,11 +9,13 @@
 @import url('./parts/property.css');
 @import url('./parts/admin.css');
 @import url('./parts/media_queries.css');
+@import url('./parts/contact.css');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif ;
 }
 html{
     overflow-x: hidden;
@@ -30,6 +32,27 @@ h1,h2{
 }
 h2{
     font-size: 3em;
+}
+
+.button-hover{
+    transition: .5s;
+}
+.button-hover:hover, .button-hover:hover>a{
+    background-color: #474E68;
+    color: #fff !important;
+}
+#plan-with-us a{
+    transition: .5s;
+}
+#plan-with-us h2{
+    transition: .5s;
+}
+#plan-with-us h2:hover{
+    transform: scale(1.1);
+}
+#plan-with-us a:hover{
+    color: #343333;
+    background-color: #fff;
 }
 /* Media Queries */
 

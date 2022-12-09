@@ -42,8 +42,7 @@ app.listen(process.env.port || 3000, () => {
 app.get("/", async (req, res) => {
     try {
         const featuredProperty = await Space.find().sort({ rating: -1 }).limit(3)
-        let reviews = await Review.find().limit(12)
-        console.log(featuredProperty)
+        let reviews = await Review.find().limit(12);
         res.locals.title = 'Home'
         res.render("index", { featuredProperty: featuredProperty, reviews: reviews });
     } catch (error) {
@@ -81,6 +80,10 @@ app.get('/admin', async (req, res) => {
 app.get('/admin/add-room', (req, res) => {
     res.locals.title = 'Add Room'
     res.render('admin/add-room')
+})
+app.get('/contact', (req, res) => {
+    res.locals.title = 'Contact Us'
+    res.render("contact")
 })
 app.post('/admin/add-room', upload.array('image'), async (req, res) => {
     try {
