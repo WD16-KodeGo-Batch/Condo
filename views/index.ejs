@@ -1,0 +1,130 @@
+<%- include('./boilerplate/header.ejs') %>
+
+    <!-- -------------------------HOME-------------------------------- -->
+    <div class="container-fluid mb-5">
+        <div class="row title-row">
+            <div class="col-lg-8 col-sm-12 title-column d-flex">
+                <h1>Exceptional stay <br>
+                    Extraordinary adventure.</h1>
+            </div>
+        </div>
+        <div class="row image">
+            <div class="col-lg-12 image-wrapper">
+                <img src="images/hero-image.jpg" />
+            </div>
+        </div>
+    </div>
+    <!-- -------------------------------ABOUT US---------------------------- -->
+    <section class="container-fluid">
+        <div class="row image-with-text justify-content-center mb-5">
+            <div class="col-lg-6 col-md-12">
+                <img src="/images/flair-towers-Sky Lounge-large.jpg" alt="" style="width:100%">
+            </div>
+            <div class="col-lg-5 col-md-12 d-flex align-items-start about-text flex-column justify-content-center">
+                <h2>Rent Space With Us</h2>
+                <p>This spacious condo features state-of-the-art amenities, including a view deck, 24-hour security, and
+                    garage parking. It is conveniently located near shopping and dining in Fairwinds.</p>
+                <button class="px-5 py-3 border-0">LEARN MORE</button>
+            </div>
+        </div>
+    </section>
+    <!-- -------------------------------TAKING TIME OFF---------------------------- -->
+    <section class="container-fluid taking-time">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <img class="quote" src="/images/quote.png" />
+                <h2>Taking time off is the best you can do for your
+                    peace of mind.</h2>
+            </div>
+        </div>
+        <div class="row image">
+            <div class="col-lg-12 image-wrapper">
+                <img src="/images/viewdeck.jpg" />
+            </div>
+        </div>
+    </section>
+    <!-- -----------------------------SPACES----------------------------------- -->
+    <div id="spaces">
+        <div class="container-fluid">
+            <h2 class="text-center">Discover our spaces</h2>
+            <h3 class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, voluptates!</h3>
+            <div class="row justify-content-center mt-5">
+                <% for (let property of featuredProperty) {%>
+                    <div class="col-lg-3 col-sm-10 d-flex justify-content-center">
+                        <div class="card bg-transparent border-0">
+                            <img src='<%=property.image[0].url%>' class="card-img-top" alt="..." height="450">
+                            <div class="card-body text-center">
+
+                                <p class="card-text">
+                                <h3>
+                                    <%=property.name %>
+                                </h3>
+                                <%=property.address %>
+                                    </p>
+                                    <button class="px-5 py-3 border-0"><a href="#">EXPLORE SPACE</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <%}%>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ---------------------------------AMENETIES------------------------------------ -->
+    <section id="amenities" class="container-fluid">
+        <div class="row justify-content-center mb-5 mt-5 amenities-text">
+            <div class="col-lg-6 d-flex align-items-center about-text flex-column justify-content-center px-5">
+                <h2>Amenities</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A iure deserunt
+                    animi ullam doloribus,
+                    molestias ab et quisquam laborum quam sunt sequi.</p>
+                <button class="px-5 py-3 border-0">LEARN MORE</button>
+            </div>
+            <div class="col-lg-5">
+                <img src="https://picsum.photos/600" alt="" style="width:100%">
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid">
+        <div class="row justify-content-center reviews">
+            <div class="col-lg-6">
+                <div class="reviews-slide w-70"
+                    data-slick='{"slidesToShow": 1, "slidesToScroll": 1,"arrows": false, "autoplay":true,"autoplaySpeed": 2000}'>
+                    <%for (let i=0;i<6;i++) {%>
+                        <div>
+                            <h3>
+                                <%=reviews[i].content%>
+                            </h3>
+                            <p>--Guest <%=reviews[i].review%>
+                            </p>
+                        </div>
+                        <%}%>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="reviews-slide2 w-70"
+                    data-slick='{"slidesToShow": 1, "slidesToScroll": 1,"arrows": false,"autoplay":true,"autoplaySpeed": 2000}'>
+                    <%for (let i=6;i<11;i++) {%>
+                        <div>
+                            <h3>
+                                <%=reviews[i].content%>
+                            </h3>
+                            <p>--Guest <%=reviews[i].review%>
+                            </p>
+                        </div>
+                        <%}%>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="plan-with-us" class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Plan a stay with us today.</h2>
+                <a href="#">BOOK A SPACE</a>
+            </div>
+        </div>
+    </section>
+    </main>
+    <%- include('./boilerplate/footer.ejs') %>
